@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GECN AI Assistant</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#172033}
+body{background:#f6f7fb}
+button,textarea{font:inherit}button{cursor:pointer}
+.app{display:flex;min-height:100vh}
+.sidebar{width:265px;flex:0 0 265px;padding:22px 16px;background:#101828;color:#d8dfec;display:flex;flex-direction:column}
+.brand{display:flex;gap:11px;align-items:center;padding:4px 9px 24px}.mark{width:39px;height:39px;border-radius:12px;background:#fff;color:#101828;display:grid;place-items:center;font-weight:900}
+.brand b,.brand span{display:block}.brand b{color:#fff;font-size:15px}.brand span{font-size:11px;color:#98a4b8;margin-top:2px}
+.new{width:100%;padding:12px;border:1px solid #344054;border-radius:11px;background:#1b2638;color:#fff;text-align:left;font-weight:700}
+.nav{margin-top:28px}.nav-title{margin:0 10px 9px;color:#69778e;font-size:10px;font-weight:800;letter-spacing:.13em}
+.nav button{display:flex;gap:11px;align-items:center;width:100%;margin:2px 0;padding:10px 11px;border:0;border-radius:9px;background:transparent;color:#aeb9c9;text-align:left;font-size:13px}
+.nav button:hover,.nav button.active{background:#1b2638;color:#fff}.nav button span{width:19px;text-align:center}
+.foot{margin-top:auto;padding:14px 10px 3px;border-top:1px solid #273348;font-size:11px}.dot{color:#42d392}.foot span{display:block;color:#748197;margin-top:3px;font-size:10px}
+.main{min-width:0;flex:1;display:flex;flex-direction:column}
+.top{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 34px;border-bottom:1px solid #e5e8ef;background:#fff}
+.title{margin:0;font-size:14px;font-weight:800}.sub{margin:3px 0 0;color:#7b8494;font-size:11px}
+.online{font-size:12px;font-weight:700;color:#5f6b7d}.online i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#31b875;margin-right:7px}
+.menu{display:none;border:0;background:transparent;font-size:21px}
+.chat{flex:1;overflow:auto;padding:34px 24px 22px}.welcome{max-width:760px;margin:9vh auto 0;text-align:center}
+.orb{width:56px;height:56px;display:grid;place-items:center;margin:0 auto 18px;border-radius:18px;background:#111827;color:#fff;font-size:25px}
+.eyebrow{margin:0 0 8px;color:#667085;font-size:10px;font-weight:900;letter-spacing:.15em}.welcome h1{margin:0;font-size:clamp(28px,4vw,42px);letter-spacing:-.04em}
+.copy{max-width:610px;margin:13px auto;color:#697386;line-height:1.65;font-size:14px}
+.suggestions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}.suggestions button{min-height:58px;padding:13px 14px;border:1px solid #e1e5ec;border-radius:13px;background:#fff;color:#344054;text-align:left;font-size:12px}
+.messages{max-width:850px;margin:auto}.line{display:flex;gap:11px;align-items:flex-start;margin-bottom:24px}.line.user{justify-content:flex-end}
+.avatar{width:32px;height:32px;flex:0 0 32px;display:grid;place-items:center;border-radius:10px;background:#111827;color:#fff;font-size:13px}
+.bubble{max-width:min(720px,80%);padding:12px 15px;border:1px solid #e3e7ee;border-radius:5px 15px 15px 15px;background:#fff;color:#273142;font-size:14px;line-height:1.65;white-space:pre-wrap}
+.user .bubble{border:0;border-radius:15px 5px 15px 15px;background:#111827;color:#fff}.label{margin-bottom:4px;color:#7b8494;font-size:9px;font-weight:900;letter-spacing:.12em}
+.composer-wrap{width:min(850px,calc(100% - 48px));margin:0 auto;padding:8px 0 19px}.composer{display:flex;align-items:flex-end;gap:10px;padding:8px 8px 8px 15px;border:1px solid #dfe4ec;border-radius:16px;background:#fff;box-shadow:0 10px 30px #10182812}
+textarea{flex:1;min-height:42px;max-height:130px;resize:none;padding:11px 0;border:0;outline:0;background:transparent;line-height:1.4;font-size:13px}.send{width:42px;height:42px;border:0;border-radius:12px;background:#111827;color:#fff;font-size:20px}.send:disabled{opacity:.35}
+.disclaimer{margin:8px 5px 0;color:#98a2b3;text-align:center;font-size:9px}
+@media(max-width:780px){.sidebar{position:fixed;z-index:20;inset:0 auto 0 0;transform:translateX(-100%);transition:.2s;box-shadow:18px 0 40px #1018282e}.sidebar.open{transform:translateX(0)}.menu{display:block;margin-right:11px}.top{justify-content:flex-start;padding:0 18px}.online{margin-left:auto}.suggestions{grid-template-columns:1fr}.welcome{margin-top:5vh}.chat{padding:24px 15px 18px}.composer-wrap{width:calc(100% - 24px)}.bubble{max-width:86%}}
+</style>
+</head>
+<body>
+<div id="app" class="app">
+<aside id="sidebar" class="sidebar">
+  <div class="brand"><div class="mark">G</div><div><b>GECN</b><span>AI Assistant</span></div></div>
+  <button id="newChat" class="new">＋ New chat</button>
+  <nav class="nav"><p class="nav-title">COLLEGE</p>
+    <button class="active" data-section="Overview"><span>⌂</span>Overview</button>
+    <button data-section="Admissions"><span>🎓</span>Admissions</button>
+    <button data-section="Departments"><span>📚</span>Departments</button>
+    <button data-section="Fees"><span>💳</span>Fees</button>
+    <button data-section="Hostel"><span>🏠</span>Hostel</button>
+    <button data-section="Notices"><span>📢</span>Notices</button>
+    <button data-section="Exams"><span>📝</span>Exams</button>
+    <button data-section="Placements"><span>💼</span>Placements</button>
+  </nav>
+  <div class="foot"><b><span class="dot">●</span> AI Assistant</b><span>College information</span></div>
+</aside>
+<main class="main">
+<header class="top"><div style="display:flex;align-items:center"><button id="menu" class="menu">☰</button><div><p id="sectionTitle" class="title">Overview</p><p class="sub">GECN College AI Assistant</p></div></div><div class="online"><i></i><span id="status">Online</span></div></header>
+<div id="chat" class="chat">
+<section id="welcome" class="welcome">
+<div class="orb">✦</div><p class="eyebrow">GECN AI ASSISTANT</p><h1>How can I help you today?</h1>
+<p class="copy">Ask about admissions, departments, fees, hostel, exams, notices, placements and other college information.</p>
+<div class="suggestions">
+<button data-q="What courses are available in the college?">↗ What courses are available in the college?</button>
+<button data-q="Tell me about hostel facilities.">↗ Tell me about hostel facilities.</button>
+<button data-q="What information is available about fees?">↗ What information is available about fees?</button>
+<button data-q="How can I contact the college?">↗ How can I contact the college?</button>
+</div>
+</section>
+<div id="messages" class="messages" style="display:none"></div>
+</div>
+<div class="composer-wrap"><form id="form" class="composer"><textarea id="input" rows="1" placeholder="Ask anything about your college..."></textarea><button id="send" class="send" disabled>↑</button></form><p class="disclaimer">AI can make mistakes. Official college documents should be treated as the final source of truth.</p></div>
+</main></div>
+<script>
+const API_URL = "http://localhost:5000/api/chat";
+let messages=[], loading=false;
+const $=id=>document.getElementById(id);
+function render(){
+  $("welcome").style.display=messages.length?"none":"block";
+  $("messages").style.display=messages.length?"block":"none";
+  $("messages").innerHTML=messages.map(m=>{
+    const user=m.role==="user";
+    return `<div class="line ${user?"user":""}">${user?"":'<div class="avatar">✦</div>'}<div class="bubble">${user?"":'<div class="label">GECN AI</div>'}${escapeHtml(m.content)}</div></div>`;
+  }).join("")+(loading?'<div class="line"><div class="avatar">✦</div><div class="bubble"><div class="label">GECN AI</div>Thinking...</div></div>':"");
+  $("chat").scrollTop=$("chat").scrollHeight;
+  $("send").disabled=!$("input").value.trim()||loading;
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+async function send(text){
+  text=(text||"").trim(); if(!text||loading)return;
+  messages.push({role:"user",content:text}); $("input").value=""; loading=true; $("status").textContent="Thinking..."; render();
+  try{
+    const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:text,history:messages})});
+    const data=await r.json(); if(!r.ok) throw new Error(data.error||"Request failed");
+    messages.push({role:"assistant",content:data.reply||"No response received."});
+  }catch(e){
+    console.error(e); messages.push({role:"assistant",content:"Backend se connection nahi ho pa raha. Pehle backend terminal me `npm run dev` chalao aur http://localhost:5000 check karo."});
+  }finally{loading=false;$("status").textContent="Online";render();}
+}
+$("form").addEventListener("submit",e=>{e.preventDefault();send($("input").value)});
+$("input").addEventListener("input",render);
+$("input").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send($("input").value)}});
+document.querySelectorAll("[data-q]").forEach(b=>b.addEventListener("click",()=>send(b.dataset.q)));
+document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-section]").forEach(x=>x.classList.remove("active"));b.classList.add("active");$("sectionTitle").textContent=b.dataset.section;$("sidebar").classList.remove("open")}));
+$("newChat").addEventListener("click",()=>{messages=[];render()});$("menu").addEventListener("click",()=>$("sidebar").classList.toggle("open"));
+render();
+</script>
+</body></html>
