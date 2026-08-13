@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "name": "Government Engineering College Nawada",
+    "short_name": "GEC Nawada / GECN",
+    "state": "Bihar",
+    "department": "Science, Technology and Technical Education Department, Government of Bihar",
+    "established": 2019,
+    "official_website": "https://www.gecnawada.org.in/",
+    "location": "Anchal-Nawada Sadar, Budhaul, District Nawada, Bihar 805111",
+    "postal_code": "805111",
+    "principal": "Dr. Raushan Kumar"
+  },
+  "departments": [
+    {
+      "name": "Civil Engineering",
+      "code": "CE",
+      "seats": 60,
+      "hod": "Dr. Raushan Kumar (Assistant Professor - Senior Scale)"
+    },
+    {
+      "name": "Computer Science & Engineering",
+      "code": "CSE",
+      "seats": 60,
+      "hod": "Mr. Raman Choudhary (Assistant Professor & HOD)"
+    },
+    {
+      "name": "Electrical Engineering",
+      "code": "EE",
+      "seats": 60,
+      "hod": "Dr. Abhinav Kumar (Assistant Professor & HOD)"
+    },
+    {
+      "name": "Electronics & Communication Engineering",
+      "code": "ECE",
+      "seats": 60,
+      "hod": "Dr. Shivam Kumar (Assistant Professor & HOD)"
+    },
+    {
+      "name": "Mechanical Engineering",
+      "code": "ME",
+      "seats": 60,
+      "hod": "Mr. Mukesh Kumar (Assistant Professor - Senior Scale & HOD)"
+    },
+    {
+      "name": "Applied Science & Humanities",
+      "code": "ASH",
+      "role": "Foundation/support teaching"
+    }
+  ],
+  "cse_faculty": [
+    {"name": "Mr. Raman Choudhary", "designation": "Assistant Professor & HOD"},
+    {"name": "Mr. Himanshu Singh", "designation": "Assistant Professor"},
+    {"name": "Dr. Vikash Kumar", "designation": "Assistant Professor"},
+    {"name": "Miss. Shrestha Suman", "designation": "Assistant Professor"},
+    {"name": "Mr. Ajit Kumar Singh", "designation": "Assistant Professor"},
+    {"name": "Mr. Anil Kumar", "designation": "Assistant Professor"},
+    {"name": "Miss. Swarneema Kumari", "designation": "Assistant Professor"}
+  ],
+  "ece_faculty": [
+    {"name": "Dr. Shivam Kumar", "designation": "Assistant Professor & HOD"},
+    {"name": "Mr. Shashi Kumar", "designation": "Assistant Professor"},
+    {"name": "Dr. Avinash Kumar", "designation": "Assistant Professor"},
+    {"name": "Mr. Nikhil Kumar", "designation": "Assistant Professor"},
+    {"name": "Mrs. Jyoti Kumari", "designation": "Assistant Professor"},
+    {"name": "Mr. Lucky Kumar", "designation": "Assistant Professor"},
+    {"name": "Dr. Shikha Sharma", "designation": "Assistant Professor"}
+  ],
+  "ee_faculty": [
+    {"name": "Dr. Abhinav Kumar", "designation": "Assistant Professor & HOD"},
+    {"name": "Mr. Ravi Kumar", "designation": "Assistant Professor"},
+    {"name": "Mrs. Kanchan Bharti", "designation": "Assistant Professor"},
+    {"name": "Mr. Ravikant Shastri", "designation": "Assistant Professor"},
+    {"name": "Mr. Dharmendra Kumar", "designation": "Assistant Professor"},
+    {"name": "Mr. Shivam Bharti", "designation": "Assistant Professor"},
+    {"name": "Mrs. Anchal Anand", "designation": "Assistant Professor"},
+    {"name": "Mrs. Priyanka Kumari", "designation": "Assistant Professor"},
+    {"name": "Mrs. Rashmi Rani", "designation": "Assistant Professor"}
+  ],
+  "civil_faculty": [
+    {"name": "Dr. Raushan Kumar", "designation": "Assistant Professor (Senior Scale) & HOD"},
+    {"name": "Dr. Md Saeb Sufyan", "designation": "Assistant Professor (Senior Scale)"},
+    {"name": "Prof. Akash", "designation": "Assistant Professor"},
+    {"name": "Mr. Amit Kumar", "designation": "Assistant Professor"},
+    {"name": "Mr. Ravi Shankar", "designation": "Assistant Professor"},
+    {"name": "Mr. Shubhendu Amit", "designation": "Assistant Professor"},
+    {"name": "Mrs. Mariya Azmi", "designation": "Assistant Professor"},
+    {"name": "Mrs. Alka Kumari", "designation": "Assistant Professor"},
+    {"name": "Mr. Ranjan Kumar", "designation": "Assistant Professor"},
+    {"name": "Miss. Anjali Sinha", "designation": "Assistant Professor"}
+  ],
+  "mechanical_faculty": [
+    {"name": "Mr. Mukesh Kumar", "designation": "Assistant Professor (Senior Scale) & HOD"},
+    {"name": "Mr. Shikandar Prasad", "designation": "Assistant Professor (Senior Scale)"},
+    {"name": "Dr. Rajesh Baitha", "designation": "Assistant Professor (Senior Scale)"},
+    {"name": "Dr. Rajesh Kumar", "designation": "Assistant Professor"},
+    {"name": "Dr. Rajani Kant Rao", "designation": "Assistant Professor"},
+    {"name": "Mr. Ravi Roshan", "designation": "Assistant Professor"},
+    {"name": "Mrs. Dipika Sinha", "designation": "Assistant Professor"},
+    {"name": "Mr. Ajay Kumar Paswan", "designation": "Assistant Professor"},
+    {"name": "Miss. Nidhi Sneha Bara", "designation": "Assistant Professor"}
+  ],
+  "ash_faculty": [
+    {"name": "Mr. Kumar Gaurav", "designation": "Assistant Professor"},
+    {"name": "Sumit Kumar", "designation": "Guest Assistant Professor (Physics)"}
+  ],
+  "placement": {
+    "official_page": "https://www.gecnawada.org.in/training-and-placement/about-placement/",
+    "placement_list": "https://www.gecnawada.org.in/training-and-placement/placement-list/",
+    "training_placement_officer": "Dr. Rajanikant Rao",
+    "joint_incharge_placement_cell": "Shri Dharmendra Kumar",
+    "coordinators": {
+      "cse": "Shri Himanshu Singh",
+      "ee": "Miss Anchal Anand",
+      "ece": "Shri Nikhil Kumar",
+      "me": "Dr. Rajanikant Rao"
+    },
+    "note": "The official placement page describes a Training and Placement Cell. Alumni have been placed across diverse sectors in India and abroad. For current package information, check the official Placement List."
+  },
+  "admission": {
+    "process": "BCECEB (Bihar Combined Entrance Competitive Examination Board)",
+    "lateral_entry": "BCECE(LE) for Diploma in Engineering or B.Sc. holders for second year admission",
+    "note": "Students should verify current eligibility, dates, counselling and seat matrix from the latest BCECEB/college admission notice.",
+    "official_page": "https://www.gecnawada.org.in/academics/admission/"
+  },
+  "student_costs": {
+    "year_1": "₹98,620 (estimated - includes admission fee, development fee, examination fee, laptop, study material, hostel, project work, online courses)",
+    "year_2": "₹1,22,620",
+    "year_3": "₹72,620",
+    "year_4": "₹72,620",
+    "note": "These are tentative figures from 2025 official document. For current exact fees, check the latest fee/hostel notice from the college."
+  },
+  "facilities": [
+    "Sports Facilities",
+    "Medical Facilities",
+    "Guest House",
+    "Gymnasium",
+    "Account section",
+    "Student clubs",
+    "Wi-Fi",
+    "Library and academic infrastructure",
+    "Grievance Redress and Monitoring System",
+    "Research & Innovation",
+    "Skill Development Mission resources"
+  ],
+  "academics": {
+    "services": [
+      "Academic calendar and holiday information",
+      "Semester timetables and examination notices",
+      "Attendance information",
+      "Syllabus and academic regulations",
+      "Question banks and department academic resources",
+      "Tests/results and department activities",
+      "Disciplinary and anti-ragging information"
+    ],
+    "note": "For current timetables, exam dates, and notices, check the official notices page."
+  },
+  "current_official_notices": "https://www.gecnawada.org.in/category/notices/",
+  "important_rules": [
+    "Never invent faculty qualifications, phone numbers, fees, or placement packages",
+    "For current notices, exams, timetables, fees, admission deadlines - check the latest official notice",
+    "Answer in the student's language (Hindi/Hinglish or English as appropriate)",
+    "When unsure about time-sensitive information, recommend checking the official GEC Nawada website",
+    "Do not claim to issue official approvals, certificates, or guarantees"
+  ],
+  "source_pages": [
+    "https://www.gecnawada.org.in/",
+    "https://www.gecnawada.org.in/about-us/principals-message/",
+    "https://www.gecnawada.org.in/training-and-placement/about-placement/",
+    "https://www.gecnawada.org.in/training-and-placement/placement-list/",
+    "https://www.gecnawada.org.in/category/notices/",
+    "https://www.gecnawada.org.in/academics/admission/"
+  ]
+}

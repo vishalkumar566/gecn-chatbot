@@ -1,48 +1,48 @@
-# GECN College AI Chatbot
+# GECN College AI - NVIDIA NIM
 
-React + Vite frontend, Node.js + Express backend, and OpenRouter AI.
+This project uses NVIDIA NIM through its OpenAI-compatible API endpoint.
 
-## Security
-Do NOT put an API key in frontend code or commit `.env` to GitHub.
-The API key shared in chat has been exposed, so revoke/rotate it and create a new key before using this project.
+## 1. Configure the API key
 
-## Run locally
+Open `backend/.env` and set:
 
-Backend:
-```bash
+NVIDIA_API_KEY=YOUR_NEW_NVIDIA_API_KEY
+NVIDIA_MODEL=meta/llama-3.3-70b-instruct
+NVIDIA_BASE_URL=https://integrate.api.nvidia.com/v1
+PORT=5000
+
+Never commit `.env` or share the API key. If a key was exposed publicly, revoke it and create a new one.
+
+## 2. Start backend
+
+Windows: double-click `START-BACKEND.bat`
+
+Or in VS Code terminal:
+
 cd backend
 npm install
-```
-Create `backend/.env` from `.env.example`, add your NEW key, then:
-```bash
 npm run dev
-```
 
-Frontend, in another terminal:
-```bash
+Check: http://localhost:5000
+
+Expected JSON includes `provider: "NVIDIA NIM"` and `ai: true` when the key is configured.
+
+## 3. Start frontend
+
+Windows: double-click `START-FRONTEND.bat`
+
+Or in another VS Code terminal:
+
 cd frontend
 npm install
 npm run dev
-```
 
-Open the Vite URL, normally http://localhost:5173.
+Open exactly: http://localhost:5173
 
-## Default model
-`openai/gpt-oss-120b:free`
+The Vite server uses `strictPort`, so it will NOT silently move to 5174/5175. If 5173 is already in use, stop the old Vite process with Ctrl+C and restart.
 
-Change it with `OPENROUTER_MODEL` in `backend/.env`.
+## 4. Important
 
-## GitHub
-```bash
-git init
-git add .
-git commit -m "Initial GECN college AI chatbot"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/GECN-College-AI-Chatbot.git
-git push -u origin main
-```
+The frontend must be opened from this project's `frontend` folder. If you see the old message beginning with `Demo response:`, you are running an older copy of the project; the NVIDIA version does not contain that demo response.
 
-Never commit `.env`.
-
-## Next phase
-Add approved college PDFs and implement RAG + Supabase for official college knowledge, notices, fees, hostel, departments, exams and placements.
+The college knowledge base is in `backend/college-knowledge.json`. It is grounding/context, not model fine-tuning.
