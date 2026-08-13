@@ -6,10 +6,21 @@ const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const HOST = process.env.HOST || "0.0.0.0";
 const NVIDIA_BASE_URL = (process.env.NVIDIA_BASE_URL || "https://integrate.api.nvidia.com/v1").replace(/\/$/, "");
 const NVIDIA_MODEL = process.env.NVIDIA_MODEL || "nvidia/llama-3.3-nemotron-super-49b-v1.5";
+const allowedOrigins = [process.env.CORS_ORIGIN, "http://localhost:5173", "http://127.0.0.1:5173"].filter(Boolean);
 
-app.use(cors({ origin: true }));
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+    callback(null, true);
+  },
+  credentials: true
+}));
 app.use(express.json({ limit: "1mb" }));
 
 const knowledgePath = path.join(__dirname, "college-knowledge.json");
@@ -109,4 +120,4 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`GECN backend running at http://localhost:${PORT}`));
+app.listen(PORT, HOST, () => console.log(`GECN backend running at http://${HOST}:${PORT}`));

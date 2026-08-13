@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/chat";
+const API_URL = import.meta.env.VITE_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname !== "localhost"
+    ? "/api/chat"
+    : "http://localhost:5000/api/chat");
 const questions = [
   "What courses are available in the college?",
   "Tell me about hostel facilities.",
