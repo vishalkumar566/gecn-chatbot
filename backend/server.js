@@ -120,4 +120,10 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-app.listen(PORT, HOST, () => console.log(`GECN backend running at http://${HOST}:${PORT}`));
+// Start a local server only when this file is run directly. On Vercel, the
+// Express app is imported by api/[...path].js as a serverless function.
+if (require.main === module) {
+  app.listen(PORT, HOST, () => console.log(`GECN backend running at http://${HOST}:${PORT}`));
+}
+
+module.exports = app;
